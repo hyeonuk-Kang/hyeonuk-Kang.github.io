@@ -67,13 +67,33 @@ module.exports = {
             },
           },
           {
-            // 마크다운 파일 추가용
+            // 마크다운 컨텐츠 추가용
             resolve: `gatsby-source-filesystem`,
             options: {
               name: `contents`,
               path: `${__dirname}/contents`,
             },
           },
+          {
+            // 마크다운 이미지 추가용
+            resolve: `gatsby-source-filesystem`,
+            options: {
+              name: `images`,
+              path: `${__dirname}/static`,
+            },
+          },
+          {
+            resolve: `gatsby-plugin-sharp`,
+            options: {
+              defaults: {
+                formats: ['auto', 'webp'],
+                quality: 100,
+                placeholder: 'blurred',
+              }
+            }
+          },
+          `gatsby-transformer-sharp`,
+          `gatsby-plugin-image`,
         ],
       },
     },
