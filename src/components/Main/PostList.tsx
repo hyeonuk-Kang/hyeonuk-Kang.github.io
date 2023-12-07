@@ -20,7 +20,7 @@ export type PostType = {
 
 
 type PostListProps = {
-  posts: PostType[]
+  posts: PostListItemType[]
 }
 
 const PostListWrapper = styled.div`
