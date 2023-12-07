@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, ReactNode } from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
@@ -25,6 +25,12 @@ const CategoryListWrapper = styled.div`
   flex-wrap: wrap;
   width: 768px;
   margin: 100px auto 0;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
 `
 
 const CategoryList: FunctionComponent<CategoryListProps> = function ({
@@ -48,7 +54,6 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
 
 export default CategoryList
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
 ))<CategoryItemProps>`
@@ -60,5 +65,9 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
 
   &:last-of-type {
     margin-right: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 15px;
   }
 `
